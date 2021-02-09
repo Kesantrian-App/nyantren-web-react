@@ -8,6 +8,23 @@ html, body, #root, .rheight-100 {
 
 body {
    font-family: 'Montserrat', sans-serif;
+   transition: 0.5s;
+}
+
+::-webkit-scrollbar {
+   width: 8px;
+   /* background-color: rgb(61, 61, 61); */
+}
+
+::-webkit-scrollbar-track {
+   background-color: rgb(216, 216, 216);
+   border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+   width: 8px;
+   background-color: rgb(61, 61, 61);
+   border-radius: 5px;
 }
 
 .bg-lgreen {
@@ -24,6 +41,10 @@ body {
    cursor: pointer;
 }
 
+.default:hover {
+   cursor: default;
+}
+
 .text-lgreen {
    /* color: #1fb174; */
    color: #2ECC71;
@@ -33,9 +54,17 @@ body {
    cursor: default;
 } */
 
+.overflow-x-hidden {
+   overflow-x: hidden;
+}
+
+.overflow-y-auto {
+   overflow-y: auto;
+}
+
 .border-lgreen {
    /* color: #1fb174; */
-   border: 1px solid #2ECC71;
+   border-color: solid #2ECC71;
 }
 
 .header {
@@ -307,7 +336,7 @@ body {
 }
 
 .bg-lgreen-gradient-start {
-   background-image: linear-gradient(to right, rgba(19, 143, 122, 0.788), rgba(13, 216, 114, 0.567));
+   background-image: linear-gradient(to right, rgba(19, 143, 122, 0.945), rgba(82, 255, 169, 0.822));
 }
 
 .bg-lgreen-gradient-top {
@@ -343,8 +372,22 @@ body {
    width: 80%;
 }
 
+.w-90 {
+   width: 90%;
+}
+
 .ms-self-4 {
    margin-left: 8%;
+}
+
+.pt-self-3 {
+   padding-top: 3%;
+   padding-bottom: 3%;
+}
+
+.px-self-5 {
+   padding-left: 5%;
+   padding-right: 5%;
 }
 
 .p-self-5 {
@@ -375,7 +418,7 @@ body {
 }
 
 .text-20 {
-   font-size: 20px;
+   font-size: 25px;
 }
 
 .opacity-1 {
@@ -411,6 +454,7 @@ body {
    padding-top: 5%;
    padding-bottom: 5%;
 }
+
 .list-fitur:hover {
    background-color: rgba(218, 218, 218, 0.459)!important;
    padding-left: 4%;
@@ -426,8 +470,20 @@ small {
    margin-top: -3.5%;
 }
 
+.mt-min-1 {
+   margin-top: -1%;
+}
+
 .mt-min-10 {
    margin-top: -5%;
+}
+
+.h-40 {
+   height: 40%;
+}
+
+.h-60 {
+   height: 60%;
 }
 
 .h-70 {
@@ -435,17 +491,33 @@ small {
 }
 
 #ppProfile {
-   width: 150px;
-   height: 150px;
+   width: 200px;
+   height: 250px;
+   object-fit: cover;
 }
 
+#profile-head {
+   background-image: url("./forest.png");
+   background-size: cover;
+   background-position-y: center;
+}
+
+/* 
+#profile-head {
+   background-color: rgb(64, 124, 94);
+} */
+
 .mx-s-1 {
-   margin-left: 10px;
+   margin-left: 12px;
    margin-right: 8px;
 }
 
-.me-min-15 {
+.me-min-6 {
    margin-right: -6%;
+}
+
+.mb-min-5 {
+   margin-bottom: -6%;
 }
 
 .card-info {
@@ -458,6 +530,55 @@ small {
 .card-info-img {
    width: 150px;
 }
+
+.link-opacity-6 {
+   transition: 0.2s;
+}
+
+.link-opacity-6:hover {
+   opacity: 0.6;
+   transition: 0.4s;
+}
+
+.mt-self-2 {
+   margin-top: 2%!important;
+}
+
+.mt-self-4 {
+   margin-top: 4%!important;
+}
+
+.py-self-2 {
+   padding-top: 2%!important;
+   padding-bottom: 2%!important;
+}
+
+.py-self-3 {
+   padding-top: 3%!important;
+   padding-bottom: 3%!important;
+}
+
+.border-lgreen {}
+
+.border-solid {
+   border-style: solid;
+}
+
+.border-start {
+   border-left: 5px;
+   border-top: 0;
+   border-right: 0;
+   border-bottom: 0;
+}
+
+.nyantrenBrand {
+   width: 15%;
+}
+
+/* 
+.bg-black-4 {
+   opacity: ;
+} */
 
 /* .mx-s-1:hover {
    margin-left: 10px;

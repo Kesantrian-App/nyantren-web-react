@@ -35,9 +35,7 @@ function App() {
             </Navbar>
           </Route>
           <Route exact path="/profile">
-            <Navbar>
-              <Profile />
-            </Navbar>
+            <Profile />
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

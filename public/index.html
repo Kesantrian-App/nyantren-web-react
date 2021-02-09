@@ -44,12 +44,11 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      function openNav() {
-        document.getElementsByClassName("mySideNav").style.width = "20%";
-      }
-      function closeNav() {
-        document.getElementsByClassName("mySideNav").style.width = "0";
-      }
+      $("[data-toggle=popover]").popover();
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })
     </script>
   </body>
 </html>

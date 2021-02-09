@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Background from '../bg1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faCross, faTimes } from '@fortawesome/free-solid-svg-icons'
+import nyantrenLogo from './../nyantrenLogo.png'
 
 const Navbar = ({children}) => {
    const OpenNav = () => {
@@ -26,10 +27,12 @@ const Navbar = ({children}) => {
    const CloseNav = () => {
       var nav = document.getElementById("mySideNav")
       var navbar = document.getElementById("navbar")
-      nav.style.width = "0"
-      // if (x.matches) {
-      //    nav.style.height = "0"
-      // }
+      if (x.matches) {
+         nav.style.height = "0"
+         nav.style.width = "100%"
+      } else {
+         nav.style.width = "0"
+      }
       nav.style.transition = "0.4s"
       navbar.className = "h-100 p-0"
       navbar.style.width = "100%"
@@ -91,7 +94,7 @@ const Navbar = ({children}) => {
          <div className="container-fluid h-100">
             <div className="row h-100 p-0 d-flex justify-content-end">
                <div className="col-2 p-0">
-                  <div className="sidenav text-start overflow-auto" id="mySideNav">
+                  <div className="sidenav text-start overflow-y-auto" id="mySideNav">
                      {/* <img alt="Nyantren"/> */}
                      <div className="p-4 nav-head">
                         <div className="navbar navbar-expand-sm p-0" style={{display: "inline"}}>
@@ -109,7 +112,7 @@ const Navbar = ({children}) => {
                            </ul>
                         </div>
                      </div>
-                     <div className="nav-body p-0 h-70">
+                     <div className="nav-body p-0 h-80 w-100 overflow-x-hidden">
                         <div className="row justify-content-center p-4 m-0">
                            <img src={Background} className="rounded-circle border-0 p-0" style={{width: "60px", height: "60px"}} alt=""/>
                            <span className="fw-light text-center mt-3">Khaidir Muktamar</span>
@@ -121,22 +124,24 @@ const Navbar = ({children}) => {
                            <a href="javascript:void(0)" className="listile">Creatifity</a>
                            <a href="javascript:void(0)" className="listile">Account</a>
                         </div>
-                        <div className="row justify-content-center d-flex align-items-end h-50">
+                        <div className="row justify-content-center d-flex align-items-end h-40">
                            <small className="text-muted text-center">copyright &copy; 2021, Nyantren</small>
                         </div>
                      </div>
                   </div>
                </div>
                <div className="h-100 p-0 float-right overflow-auto" id="navbar">
-                  <nav className="navbar navbar-expand-sm navbar-light bg-transparent text-dark py-3 px-2" id="main-navbar">
-                     <div className="container-fluid justify-content-between mt-min-13">
-                        <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="fstbtn" onClick={OpenNav}><span className="navbar-toggler-icon"></span></button>
-                        <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="scbtn" onClick={CloseNav}><span className="navbar-toggler-icon"></span></button>
+                  <nav className="navbar navbar-expand-sm navbar-light bg-transparent position-sticky text-dark py-self-2 mt-self-2 px-2" id="main-navbar">
+                     <div className="container-fluid justify-content-between mt-min-13 px-self-5">
+                        {/* <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="fstbtn" onClick={OpenNav}><span className="navbar-toggler-icon"></span></button>
+                        <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="scbtn" onClick={CloseNav}><span className="navbar-toggler-icon"></span></button> */}
+                        <img src={nyantrenLogo} className="nyantrenBrand border-0" alt=""/>
                         <div className="float-end row" id="pic2">
                            <ul className="navbar-nav d-flex align-items-center justify-content-end" style={{fontSize: "12px"}}>
-                              <li className="nav-item p-2">
-                                 <button className="of-0">
+                              <li className="nav-item p-2 mx-1">
+                                 <button className="of-0 position-relative">
                                     <FontAwesomeIcon icon={faBell} className="text-20 text-secondary" />
+                                    <span className="position-absolute top-0 translate-middle badge rounded-circle bg-danger">2</span>
                                  </button>
                               </li>
                               {ProfileAuthCondition()}

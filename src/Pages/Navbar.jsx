@@ -3,9 +3,30 @@ import { Link } from "react-router-dom";
 import Background from '../bg1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faCross, faTimes } from '@fortawesome/free-solid-svg-icons'
-import nyantrenLogo from './../nyantrenLogo.png'
+import NyantrenLogo from './../nyantrenLogo.svg'
+import $ from 'jquery'
+// import Style from './../js/style'
 
 const Navbar = ({children}) => {
+   $(window).scroll(function() {
+       if ($(document).scrollTop() > 710) {
+           $('#main-navbar').addClass('bg-lgreen-3');
+           $('#main-navbar').removeClass('bg-white');
+           $('.nyantrenBrand-2').addClass('text-light');
+           $('.nyantrenBrand-2').removeClass('text-lgreen');
+           console.log("OK");
+         } else {
+            $('#main-navbar').removeClass('bg-lgreen-3');
+            $('#main-navbar').addClass('bg-white');
+            $('.nyantrenBrand-2').removeClass('text-light');
+            $('.nyantrenBrand-2').addClass('text-lgreen');
+         }
+         if ($(document).scrollTop() > 50) {
+            $('#main-navbar').addClass('shadow-sm');
+         } else {
+            $('#main-navbar').removeClass('shadow-sm');
+         }
+      });
    const OpenNav = () => {
       var nav = document.getElementById("mySideNav")
       var navbar = document.getElementById("navbar")
@@ -59,7 +80,15 @@ const Navbar = ({children}) => {
        setAuth(true);
      }
    }, []);
-   
+   const ProfileOnHover = () => {
+      $(this).addClass('.bg-lgreen-gradient-start');
+      // $(this).fadeIn(500, function () {
+      //    $(this).addClass('.bg-lgreen-gradient-start');
+      // });
+   }
+   const ProfileOutHover = () => {
+      $('#profile').removeClass('.bg-lgreen-gradient-start');
+   }
    const ProfileAuthCondition = () => {
       if (auth === true) {
          return(
@@ -73,7 +102,7 @@ const Navbar = ({children}) => {
          )
       } else {
          return(
-            <li className="nav-item bg-lgreen-gradient-start rounded-pill" id="profile">
+            <li className="nav-item bg-lgreen-gradient-start rounded-pill" id="profile" onMouseEnter={ProfileOnHover} onMouseLeave={ProfileOutHover}>
                <Link className="nav-link" to="/Profile">
                   <span className="">
                      <img src={Background} className="rounded-circle border-0 p-0" id="pp" alt=""/>
@@ -91,7 +120,7 @@ const Navbar = ({children}) => {
    // }
    return (
       <React.Fragment>
-         <div className="container-fluid h-100">
+         <div className="container-fluid h-100 w-100">
             <div className="row h-100 p-0 d-flex justify-content-end">
                <div className="col-2 p-0">
                   <div className="sidenav text-start overflow-y-auto" id="mySideNav">
@@ -131,15 +160,18 @@ const Navbar = ({children}) => {
                   </div>
                </div>
                <div className="h-100 p-0 float-right overflow-auto" id="navbar">
-                  <nav className="navbar navbar-expand-sm navbar-light bg-transparent position-sticky text-dark py-self-2 mt-self-2 px-2" id="main-navbar">
+                  <nav className="navbar navbar-expand-sm navbar-light py-self-3 px-2 w-100" id="main-navbar" style={{zIndex: "1", position: "fixed"}}>
                      <div className="container-fluid justify-content-between mt-min-13 px-self-5">
                         {/* <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="fstbtn" onClick={OpenNav}><span className="navbar-toggler-icon"></span></button>
                         <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="scbtn" onClick={CloseNav}><span className="navbar-toggler-icon"></span></button> */}
-                        <img src={nyantrenLogo} className="nyantrenBrand border-0" alt=""/>
+                        {/* <img src={nyantrenLogo} className="nyantrenBrand border-0" alt=""/> */}
+                        <h3 className="nyantrenBrand-2 text-lgreen">
+                           Nyantren
+                        </h3>
                         <div className="float-end row" id="pic2">
                            <ul className="navbar-nav d-flex align-items-center justify-content-end" style={{fontSize: "12px"}}>
                               <li className="nav-item p-2 mx-1">
-                                 <button className="of-0 position-relative">
+                                 <button className="of-0 position-relative" data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification">
                                     <FontAwesomeIcon icon={faBell} className="text-20 text-secondary" />
                                     <span className="position-absolute top-0 translate-middle badge rounded-circle bg-danger">2</span>
                                  </button>
@@ -149,7 +181,21 @@ const Navbar = ({children}) => {
                         </div>
                      </div>
                   </nav>
-                  <div className="py-3 h-100">{children}</div>
+                  <div className="collapse position-fixed justify-content-end mt-self-5 w-90" style={{zIndex: "2"}} id="notification">
+                     <div class="col-3 float-end card border-0 shadow">
+                        <div className="card-header border-0 p-3 bg-transparent justify-content-center">
+                           <div className="border-bottom">
+                              <h6 className="text-start">Notification</h6>
+                           </div>
+                        </div>
+                        <div className="card-body">
+                           <small>
+                              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                           </small>
+                        </div>
+                     </div>
+                  </div>
+                  <div className="py-3 h-100 mt-self-7 position-absolute">{children}</div>
                </div>
             </div>
          </div>

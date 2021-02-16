@@ -10,32 +10,32 @@ import Wavy from "./../Wavy_Bus-30_Single-transparent-bg.png"
 import Setoran from "./../undrawSetoran1.svg"
 import DaftarSantri from "./../undrawDaftarSantri2.svg"
 import Gadget from "./../undrawGadget2.svg"
+import Welcome from "./../undrawWelcome.svg"
 import LaporanHafalan from "./../undrawLaporanHafalan.svg"
+import FpUpload from './../freepik_Upload.jpg'
+import FpUpload2 from './../fp_Upload_2.jpg'
 
 class Home extends Component {
    render(){
       return(
          <React.Fragment>
-            <div className="container-fluid pb-5 px-0 w-100">
-               <div className="row text-center py-4 mb-2 m-0 px-3">
-                  <div className="col-9 m-0 h-80">
-                     <div className="row rowProfile-px pb-4">
-                        <div className="card p-4 bg-lgreen-gradient-start border-0 rounded shadow">
-                           <div className="card-body p-0">
-                              <div className="row">
-                                 <div className="cols-8 text-start text-light p-4 align-items-center d-flex default">
-                                    <div className="row h-100">
-                                       <h4>Selamat Datang, Khaidir!</h4>
-                                       <p className="py-0">Ada 3 Santri yang belum menyetorkan hafalan baru hari ini!</p>
-                                    </div>
-                                 </div>
-                                 <div className="cols-4 p-3 align-items-center d-flex">
-                                    <img id="egretIcon" src="http://egret-react.ui-lib.com/assets/images/illustrations/designer.svg" alt=""/>
-                                 </div>
-                              </div>
-                           </div>
+            <div className="container-fluid pb-5 px-0 w-100 overflow-x-hidden">
+               <div className="row pb-4 justify-content-center px-self-10 pt-self-7 bg-lgreen-3">
+                  <div className="row justify-content-between">
+                     <div className="cols-8 text-start text-light p-4 align-items-center d-flex default">
+                        <div className="row h-100 align-items-center d-flex">
+                           <h4>Selamat Datang, Khaidir!
+                              <h6 className="py-3">Ada 3 Santri yang belum menyetorkan hafalan baru hari ini!</h6>
+                           </h4>
                         </div>
                      </div>
+                     <div className="cols-4 p-3 align-items-center d-flex justify-content-end">
+                        <img src={Welcome} className="img-thumbnail border-0 p-0 bg-transparent" alt=""/>
+                     </div>
+                  </div>
+               </div>
+               <div className="row text-center py-4 mb-2 m-0 px-self-10">
+                  <div className="col-9 m-0 h-80">
                      <div className="row justify-content-between rowProfile-px my-3" id="st">
                         <div className="col-7 p-0 justify-content-start">
                            <div className="card border-end border-0 p-0 shadow-sm p-3">

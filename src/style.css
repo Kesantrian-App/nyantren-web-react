@@ -48,6 +48,23 @@ body {
    background-color: rgba(46, 44, 44, 0.534);
 }
 
+.bg-white-blur {
+   background-color: rgba(255, 255, 255, 0.829);
+   /* -webkit-filter: blur(20px);
+   -moz-filter: blur(20px);
+   -o-filter: blur(20px);
+   -ms-filter: blur(20px);
+   filter: blur(20px); */
+}
+
+.bg-white-blur::before {
+   -webkit-filter: blur(20px);
+   -moz-filter: blur(20px);
+   -o-filter: blur(20px);
+   -ms-filter: blur(20px);
+   filter: blur(20px);
+}
+
 .nav-link.active {
    color: #2ECC71;
 }
@@ -63,6 +80,11 @@ body {
 .text-lgreen {
    /* color: #1fb174; */
    color: #2ECC71;
+}
+
+.text-lgreen-2 {
+   /* color: #1fb174; */
+   color: #5cc487;
 }
 
 /* h1, h2, h3, h4, h5, h6:hover {
@@ -640,6 +662,10 @@ small {
 
 .pt-self-2 {
    padding-top: 2%!important;
+}
+
+.pt-self-7 {
+   padding-top: 7%!important;
 }
 
 .py-self-2 {

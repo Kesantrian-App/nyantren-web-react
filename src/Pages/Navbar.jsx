@@ -9,19 +9,28 @@ import $ from 'jquery'
 
 const Navbar = ({children}) => {
    $(window).scroll(function() {
-       if ($(document).scrollTop() > 710) {
+       if ($(document).scrollTop() > 940 || $(document).scrollTop() < 300) {
            $('#main-navbar').addClass('bg-lgreen-3');
            $('#main-navbar').removeClass('bg-white');
            $('.nyantrenBrand-2').addClass('text-light');
            $('.nyantrenBrand-2').removeClass('text-lgreen');
+           $('.icon').addClass('text-light');
+           $('.icon').removeClass('text-lgreen-2');
            console.log("OK");
+         // } else if ($(document).scrollTop() > 50) {
+         //    $('#main-navbar').addClass('.bg-lgreen-3');
+         //    $('#main-navbar').removeClass('bg-white');
+         //    $('.nyantrenBrand-2').addClass('text-light');
+         //    $('.nyantrenBrand-2').removeClass('text-lgreen');
          } else {
             $('#main-navbar').removeClass('bg-lgreen-3');
             $('#main-navbar').addClass('bg-white');
             $('.nyantrenBrand-2').removeClass('text-light');
             $('.nyantrenBrand-2').addClass('text-lgreen');
+            $('.icon').removeClass('text-light');
+            $('.icon').addClass('text-lgreen-2');
          }
-         if ($(document).scrollTop() > 50) {
+         if ($(document).scrollTop() > 20) {
             $('#main-navbar').addClass('shadow-sm');
          } else {
             $('#main-navbar').removeClass('shadow-sm');
@@ -160,19 +169,19 @@ const Navbar = ({children}) => {
                   </div>
                </div>
                <div className="h-100 p-0 float-right overflow-auto" id="navbar">
-                  <nav className="navbar navbar-expand-sm navbar-light py-self-3 px-2 w-100" id="main-navbar" style={{zIndex: "1", position: "fixed"}}>
-                     <div className="container-fluid justify-content-between mt-min-13 px-self-5">
+                  <nav className="navbar navbar-expand-sm navbar-light bg-lgreen-3 py-self-3 px-self-10 w-100" id="main-navbar" style={{zIndex: "1", position: "fixed"}}>
+                     <div className="container-fluid justify-content-between mt-min-13">
                         {/* <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="fstbtn" onClick={OpenNav}><span className="navbar-toggler-icon"></span></button>
                         <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="scbtn" onClick={CloseNav}><span className="navbar-toggler-icon"></span></button> */}
                         {/* <img src={nyantrenLogo} className="nyantrenBrand border-0" alt=""/> */}
-                        <h3 className="nyantrenBrand-2 text-lgreen">
+                        <h3 className="nyantrenBrand-2 text-light">
                            Nyantren
                         </h3>
                         <div className="float-end row" id="pic2">
                            <ul className="navbar-nav d-flex align-items-center justify-content-end" style={{fontSize: "12px"}}>
                               <li className="nav-item p-2 mx-1">
                                  <button className="of-0 position-relative" data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification">
-                                    <FontAwesomeIcon icon={faBell} className="text-20 text-secondary" />
+                                    <FontAwesomeIcon icon={faBell} className="text-20 text-light icon" />
                                     <span className="position-absolute top-0 translate-middle badge rounded-circle bg-danger">2</span>
                                  </button>
                               </li>
@@ -185,7 +194,7 @@ const Navbar = ({children}) => {
                      <div class="col-3 float-end card border-0 shadow">
                         <div className="card-header border-0 p-3 bg-transparent justify-content-center">
                            <div className="border-bottom">
-                              <h6 className="text-start">Notification</h6>
+                              <h6 className="text-start">Notifikasi</h6>
                            </div>
                         </div>
                         <div className="card-body">
@@ -195,7 +204,7 @@ const Navbar = ({children}) => {
                         </div>
                      </div>
                   </div>
-                  <div className="py-3 h-100 mt-self-7 position-absolute">{children}</div>
+                  <div className="py-3 h-100 position-absolute">{children}</div>
                </div>
             </div>
          </div>

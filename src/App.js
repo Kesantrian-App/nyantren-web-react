@@ -10,6 +10,7 @@ import Register from "./Pages/Register";
 import Select from "./Pages/Select";
 import Data from "./Pages/Data";
 import Profile from "./Pages/Profile";
+import Profile2 from "./Pages/Profile2";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faArrowLeft, faKey, faUserCircle, faHome, faChevronRight, faBan, faPenSquare, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/profile">
             <Profile />
+          </Route>
+          <Route exact path="/profile2">
+            <Profile2 />
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

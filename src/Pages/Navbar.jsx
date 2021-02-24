@@ -4,38 +4,39 @@ import Background from '../bg1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faCross, faTimes } from '@fortawesome/free-solid-svg-icons'
 import NyantrenLogo from './../nyantrenLogo.svg'
+import Profile from './Profile'
 import $ from 'jquery'
 // import Style from './../js/style'
-
+// Font.register(src1, { fontFamily: 'Montserrat SemiBold' }); 
 const Navbar = ({children}) => {
    $(window).scroll(function() {
-       if ($(document).scrollTop() > 940 || $(document).scrollTop() < 300) {
-           $('#main-navbar').addClass('bg-lgreen-3');
-           $('#main-navbar').removeClass('bg-white');
-           $('.nyantrenBrand-2').addClass('text-light');
-           $('.nyantrenBrand-2').removeClass('text-lgreen');
-           $('.icon').addClass('text-light');
-           $('.icon').removeClass('text-lgreen-2');
-           console.log("OK");
-         // } else if ($(document).scrollTop() > 50) {
-         //    $('#main-navbar').addClass('.bg-lgreen-3');
-         //    $('#main-navbar').removeClass('bg-white');
-         //    $('.nyantrenBrand-2').addClass('text-light');
-         //    $('.nyantrenBrand-2').removeClass('text-lgreen');
-         } else {
-            $('#main-navbar').removeClass('bg-lgreen-3');
-            $('#main-navbar').addClass('bg-white');
-            $('.nyantrenBrand-2').removeClass('text-light');
-            $('.nyantrenBrand-2').addClass('text-lgreen');
-            $('.icon').removeClass('text-light');
-            $('.icon').addClass('text-lgreen-2');
-         }
-         if ($(document).scrollTop() > 20) {
-            $('#main-navbar').addClass('shadow-sm');
-         } else {
-            $('#main-navbar').removeClass('shadow-sm');
-         }
-      });
+      if ($(document).scrollTop() > 1300 || $(document).scrollTop() < 430) {
+         $('#main-navbar').addClass('bg-lgreen-3');
+         $('#main-navbar').removeClass('bg-white');
+         $('.nyantrenBrand-2').addClass('text-light');
+         $('.nyantrenBrand-2').removeClass('text-lgreen-3');
+         $('.icon').addClass('text-light');
+         $('.icon').removeClass('text-lgreen-2');
+         console.log("OK");
+      // } else if ($(document).scrollTop() > 50) {
+      //    $('#main-navbar').addClass('.bg-lgreen-3');
+      //    $('#main-navbar').removeClass('bg-white');
+      //    $('.nyantrenBrand-2').addClass('text-light');
+      //    $('.nyantrenBrand-2').removeClass('text-lgreen');
+      } else {
+         $('#main-navbar').removeClass('bg-lgreen-3');
+         $('#main-navbar').addClass('bg-white');
+         $('.nyantrenBrand-2').removeClass('text-light');
+         $('.nyantrenBrand-2').addClass('text-lgreen-3');
+         $('.icon').removeClass('text-light');
+         $('.icon').addClass('text-lgreen-2');
+      }
+      if ($(document).scrollTop() > 20) {
+         $('#main-navbar').addClass('shadow-sm');
+      } else {
+         $('#main-navbar').removeClass('shadow-sm');
+      }
+   });
    const OpenNav = () => {
       var nav = document.getElementById("mySideNav")
       var navbar = document.getElementById("navbar")
@@ -98,6 +99,9 @@ const Navbar = ({children}) => {
    const ProfileOutHover = () => {
       $('#profile').removeClass('.bg-lgreen-gradient-start');
    }
+   const ProfileSlide = () => {
+      $(<Profile />).slideUp()
+   }
    const ProfileAuthCondition = () => {
       if (auth === true) {
          return(
@@ -112,7 +116,7 @@ const Navbar = ({children}) => {
       } else {
          return(
             <li className="nav-item bg-lgreen-gradient-start rounded-pill" id="profile" onMouseEnter={ProfileOnHover} onMouseLeave={ProfileOutHover}>
-               <Link className="nav-link" to="/Profile">
+               <Link className="nav-link" to="/profile2">
                   <span className="">
                      <img src={Background} className="rounded-circle border-0 p-0" id="pp" alt=""/>
                   </span>
@@ -168,7 +172,7 @@ const Navbar = ({children}) => {
                      </div>
                   </div>
                </div>
-               <div className="h-100 p-0 float-right overflow-auto" id="navbar">
+               <div className="h-100 p-0 float-right overflow-auto w-100" id="navbar">
                   <nav className="navbar navbar-expand-sm navbar-light bg-lgreen-3 py-self-3 px-self-10 w-100" id="main-navbar" style={{zIndex: "1", position: "fixed"}}>
                      <div className="container-fluid justify-content-between mt-min-13">
                         {/* <button className="border-0 btn-outline-0 mt-2 bg-transparent collapse-button" id="fstbtn" onClick={OpenNav}><span className="navbar-toggler-icon"></span></button>
@@ -192,15 +196,24 @@ const Navbar = ({children}) => {
                   </nav>
                   <div className="collapse position-fixed justify-content-end mt-self-5 w-90" style={{zIndex: "2"}} id="notification">
                      <div class="col-3 float-end card border-0 shadow">
-                        <div className="card-header border-0 p-3 bg-transparent justify-content-center">
+                        <div className="card-header border-0 p-3 pb-0 bg-transparent justify-content-center">
                            <div className="border-bottom">
                               <h6 className="text-start">Notifikasi</h6>
                            </div>
                         </div>
-                        <div className="card-body">
-                           <small>
-                              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                           </small>
+                        <div className="card-body text-start p-0">
+                           <div className="border-bottom px-4 py-3">
+                              <h6 className="fw-bold">Mufid Hilmy </h6>
+                              <small>
+                                 Mengambil Laptop Mulai Pukul 18:00 Sampai 20:00 - Mendaftar Universitas.
+                              </small>
+                           </div>
+                           <div className="border-bottom px-4 py-3">
+                              <h6 className="fw-bold">Arkan Adil</h6>
+                              <small>
+                                 Mengambil Laptop Mulai Pukul 18:00 Sampai 20:00 - Mendaftar Universitas.
+                              </small>
+                           </div>
                         </div>
                      </div>
                   </div>

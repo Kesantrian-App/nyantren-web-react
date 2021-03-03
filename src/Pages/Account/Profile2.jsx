@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faChevronRight, faPenSquare, faPen } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Background from '../bg1.jpg'
-import Camera from './../cameraSimple.png'
+import Background from './../../bg1.jpg'
+import Camera from './../../cameraSimple.png'
 import $ from 'jquery'
 
 class Profile extends Component {

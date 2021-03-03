@@ -51,7 +51,6 @@ class Data extends Component {
       return(
          <React.Fragment>
             <div className="container-fluid">
-
                <div className="row rowProfile-px h-100">
                   <nav aria-label="breadcrumb" className="bc">
                      <ol className="breadcrumb">

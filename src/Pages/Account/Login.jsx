@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Button } from "./../Property/Form";
+import { Input, Button } from "./../../Property/Form";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faEnvelope, faKey, faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -113,13 +113,13 @@ const Login = () => {
              </div>
               <div className="card bg-lgreen border-0">
                 <div className="card-body">
-                    <div className="input-group border-light border bg-light mrr-2 my-4 rounded">
+                    <div className="input-group-3 border-light border bg-light mrr-2 my-4 rounded">
                       <span className="prr-3 bg-light me-1">
                       <FontAwesomeIcon icon={faEnvelope} className="my-2 text-success bg-light" />
                       </span>
                       <Input className="fc bg-light border-start px-2 text-success" placeholder="email" />
                     </div>
-                    <div className="input-group border-light border bg-light mrr-2 my-4 rounded">
+                    <div className="input-group-3 border-light border bg-light mrr-2 my-4 rounded">
                       <span className="prr-3 bg-light me-1">
                       <FontAwesomeIcon icon={faKey} className="my-2 text-success bg-light" />
                       </span>

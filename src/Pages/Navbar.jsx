@@ -90,12 +90,20 @@ const Navbar = ({children}) => {
             <ul className="navbar-nav d-flex align-items-center justify-content-end" style={{fontSize: "12px"}}>
                <li className="nav-item p-2 mx-1">
                   <div className="btn-group">
-                     <Link className="links links-lgreen p-0" to="/dashboard">
-                        <button className="btn btn-outline-lgreen rounded-pill">
+                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen rounded-start py-2 px-3" to="/dashboard">
                         <small>
-                        Dashboard
+                        Musyrif
                         </small>
-                        </button>
+                     </Link>
+                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen py-2 px-3" to="/dashboardsantri">
+                        <small>
+                        Santri
+                        </small>
+                     </Link>
+                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen rounded-end py-2 px-3" to="/dashboardguru">
+                        <small>
+                        Guru
+                        </small>
                      </Link>
                   </div>
                </li>

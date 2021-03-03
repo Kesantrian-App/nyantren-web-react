@@ -7,6 +7,7 @@ import Forever from './../../forever_.png'
 // import Dark from '../darken.jpg'
 // import Mq from './../bukitMq.jpg'
 import $ from 'jquery'
+import EditSantri from "../Edit Profile/EditSantri";
 
 class Profile extends Component {
    render(){
@@ -18,14 +19,21 @@ class Profile extends Component {
             $(ep).css({'display': 'flex'});
          }
       }
+      const EditDisplaySantri = () => {
+        $('.edit-santri').removeClass('d-none')
+        $('.edit-santri').addClass('d-flex')
+      }
       window.onclick = function(event) {
-         var ep = document.getElementById('editProfile');
+         var ep = document.getElementById('edit-santri');
          if (event.target == ep) {
             ep.style.display = "none";
          }
       }
       return(
          <React.Fragment>
+         <div className="container-fluid h-100 w-100 position-fixed justify-content-center top-0 bg-light-2 d-none edit-santri" id="edit-santri" style={{zIndex: '10'}}>
+            <EditSantri />
+         </div>
                <div className="p-4 h-100 w-100 position-fixed align-items-center" id="editProfile">
                   <div className="container">
                      <div className="row justify-content-center d-flex align-items-center">
@@ -77,7 +85,7 @@ class Profile extends Component {
                                     </p>
                                  </div>
                                  <div className="col-8">
-                                    <button className="btn btn-lgreen p-3" id="editDisplay" onClick={EditDisplay}>Sunting Profil</button>
+                                    <button className="btn btn-lgreen p-3" id="editDisplay" onClick={EditDisplaySantri}>Sunting Profil</button>
                                  </div>
                               </div>
                            </div>

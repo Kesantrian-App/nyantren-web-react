@@ -11,8 +11,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import Izin from './../Izin'
 import Gadget_2 from './../Add Data/Addgadget'
-import Setoran_2 from './../Add Data/AddHafalan'
-import Welcome from "./../../undrawWelcome.svg"
+import Welcome from "./../../Undraw/undrawWalking.svg"
 import List from './../../fp_List.jpg'
 import Loan from './../../fp_Loan.jpg'
 
@@ -206,7 +205,7 @@ class Home_guru extends Component {
                                  <h5 className="text-success">
                                     Guru
                                  </h5>
-                                 <Link to="/profile" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
+                                 <Link to="/profileguru" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
                                     Lihat Profil
                                  </Link>
                               </div>

@@ -9,14 +9,15 @@ import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
-import Setoran from "./../../undrawSetoran1.svg"
-import DaftarSantri from "./../../undrawDaftarSantri2.svg"
-import Gadget from "./../../undrawGadget2.svg"
-import Welcome from "./../../undrawWelcome.svg"
-import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
-import List from './../../fp_List.jpg'
-import Loan from './../../fp_Loan.jpg'
+// import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
+// import Setoran from "./../../undrawSetoran1.svg"
+// import DaftarSantri from "./../../undrawDaftarSantri2.svg"
+// import Gadget from "./../../undrawGadget2.svg"
+import LoanGadget from "./../../Undraw/undrawLoan.svg"
+// import Welcome from "./../../undrawWelcome.svg"
+// import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
+// import List from './../../fp_List.jpg'
+// import Loan from './../../fp_Loan.jpg'
 
 class Addgadget extends Component {
   render(){
@@ -37,7 +38,7 @@ class Addgadget extends Component {
                     <div className="row h-100 w-100 m-0">
                       <div className="col-6 h-70 d-flex align-items-center">
                         <div className="row">
-                          <img src={Gadget} className="img-thumbnail w-100 border-0" alt="Gadget"/>
+                          <img src={LoanGadget} className="img-thumbnail w-80 border-0" alt="Gadget"/>
                           <small>Ket : klik bagian luar untuk menutup tab</small>
                         </div>
                       </div>

@@ -13,11 +13,11 @@ import Izin from './Izin'
 import Gadget_2 from './Addgadget'
 import Setoran_2 from './AddHafalan'
 import Wavy from "./../Wavy_Bus-30_Single-transparent-bg.png"
-import Setoran from "./../undrawSetoran1.svg"
-import DaftarSantri from "./../undrawDaftarSantri2.svg"
-import Gadget from "./../undrawGadget2.svg"
-import Welcome from "./../undrawWelcome.svg"
-import LaporanHafalan from "./../undrawLaporanHafalan.svg"
+import Setoran from "./../Undraw/undrawSetoran1.svg"
+import DaftarSantri from "./../Undraw/undrawDaftarSantri2.svg"
+import Gadget from "./../Undraw/undrawGadget2.svg"
+import Welcome from "./../Undraw/undrawWelcome.svg"
+import LaporanHafalan from "./../Undraw/undrawLaporanHafalan.svg"
 import List from './../fp_List.jpg'
 import Loan from './../fp_Loan.jpg'
 

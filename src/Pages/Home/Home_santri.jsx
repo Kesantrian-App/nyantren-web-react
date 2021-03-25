@@ -12,8 +12,9 @@ import { Link } from "react-router-dom";
 import Izin from './../Izin'
 import Gadget_2 from './../Add Data/Addgadgetsantri'
 import Setoran_2 from './../Add Data/AddHafalan'
-import Welcome from "./../../undrawWelcome.svg"
-import None from "./../../undrawNone.svg"
+import Welcome from "./../../Undraw/undrawWalking.svg"
+import None from "./../../Undraw/undrawNone.svg"
+import Nodata2 from "./../../Undraw/undrawNodata2.svg"
 import List from './../../fp_List.jpg'
 import Loan from './../../fp_Loan.jpg'
 
@@ -25,25 +26,24 @@ class Home_santri extends Component {
       $(document).scrollTop(0)
    }
    render(){
-      var loan = "asldnalsd";
       $(window).scroll(function () {
-         if ($(document).scrollTop() > 150 && $(document).scrollTop() < 580) {
+         if ($(document).scrollTop() > 150 && $(document).scrollTop() < 820) {
             $('.sidecol-santri').addClass('position-fixed')
             $('.sidecol-santri').addClass('d-flex')
             $('.sidecol-santri').addClass('mt-min-11')
             $('.sidecol-santri').css({'right': '2.6%'})
             $('.sidebox').addClass('w-90')
-            $('.sidebox').addClass('h-35')
+            $('.sidebox').addClass('h-80')
             $('.sidebox').addClass('overflow-y-auto')
             $('.sidecol-santri').removeClass('align-items-end')
-         } else if ($(document).scrollTop() > 580) {
+         } else if ($(document).scrollTop() > 820) {
             $('.sidecol-santri').addClass('align-items-end')
             $('.sidebox').removeClass('w-90')
             $('.sidecol-santri').removeClass('position-fixed')
-            $('.sidebox').removeClass('h-35')
+            $('.sidebox').removeClass('h-80')
             $('.sidebox').removeClass('overflow-y-auto')
          } else if ($(document).scrollTop() < 150) {
-            $('.sidebox').removeClass('h-35')
+            $('.sidebox').removeClass('h-80')
             $('.sidebox').removeClass('overflow-y-auto')
             $('.sidecol-santri').removeClass('d-flex')
             $('.sidebox').removeClass('w-90')
@@ -123,7 +123,7 @@ class Home_santri extends Component {
                                  <div className="cols-6 text-start text-light p-4 align-items-center d-flex">
                                     <div className="row h-100">
                                        <h4>Selamat Datang, Khaidir!</h4>
-                                       <p className="py-0">Semoga Cepat Besar!</p>
+                                       <p className="py-0">Semoga Diberkahi!</p>
                                     </div>
                                  </div>
                                  <div className="cols-5 p-3 align-items-center d-flex">
@@ -205,7 +205,7 @@ class Home_santri extends Component {
                               <div className="card-body text-start px-4">
                                 <div className="row justify-content-center">
                                   <div className="col-10 justify-content-center d-flex align-items-center">
-                                    <img src={None} className="w-100" alt="none"/>
+                                    <img src={Nodata2} className="w-100" alt="none"/>
                                   </div>
                                 </div>
                                 <h5 className="text-center pt-4 fw-bold">Tidak Ada Hutang!</h5>
@@ -270,7 +270,7 @@ class Home_santri extends Component {
                                  <h5 className="text-success">
                                     Santri
                                  </h5>
-                                 <Link to="/profile" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
+                                 <Link to="/profilesantri" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
                                     Lihat Profil
                                  </Link>
                               </div>

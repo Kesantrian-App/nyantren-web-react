@@ -7,12 +7,12 @@ import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
-import Setoran from "./../../undrawSetoran1.svg"
-import DaftarSantri from "./../../undrawDaftarSantri2.svg"
-import Gadget from "./../../undrawGadget2.svg"
-import Welcome from "./../../undrawWelcome.svg"
-import Permission from "./../../undraw_Permission.svg"
-import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
+import Setoran from "./../../Undraw/undrawSetoran1.svg"
+import DaftarSantri from "./../../Undraw/undrawDaftarSantri2.svg"
+import Gadget from "./../../Undraw/undrawGadget2.svg"
+import Welcome from "./../../Undraw/undrawWelcome.svg"
+import Permission from "./../../Undraw/undraw_Permission.svg"
+import LaporanHafalan from "./../../Undraw/undrawLaporanHafalan.svg"
 import FpUpload from './../../freepik_Upload.jpg'
 import FpUpload2 from './../../fp_Upload_2.jpg'
 import FpUpload3 from './../../fp_Upload_3.png'

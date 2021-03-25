@@ -7,11 +7,10 @@ import Forever from './../../forever_.png'
 // import Dark from '../darken.jpg'
 // import Mq from './../bukitMq.jpg'
 import $ from 'jquery'
-import EditSantri from "../Edit Profile/EditSantri";
+import EditMusyrif from "../Edit Profile/EditMusyrif";
 
-class ProfileSantri extends Component {
+class ProfileMusyrif extends Component {
    render(){
-      
       const EditDisplay = () => {
          var ep = document.getElementById('editProfile');
          if (ep.style.display == 'flex') {
@@ -20,12 +19,10 @@ class ProfileSantri extends Component {
             $(ep).css({'display': 'flex'});
          }
       }
-
       const EditDisplaySantri = () => {
         $('.edit-santri').removeClass('d-none')
         $('.edit-santri').addClass('d-flex')
       }
-
       window.onclick = function(event) {
          var ep = document.getElementById('edit-santri');
          if (event.target == ep) {
@@ -33,11 +30,10 @@ class ProfileSantri extends Component {
             $('#edit-santri').removeClass('d-flex')
          }
       }
-      
       return(
          <React.Fragment>
          <div className="container-fluid h-100 w-100 position-fixed justify-content-center top-0 bg-light-2 d-none edit-santri" id="edit-santri" style={{zIndex: '10'}}>
-            <EditSantri />
+            <EditMusyrif />
          </div>
                <div className="p-4 h-100 w-100 position-fixed align-items-center" id="editProfile">
                   <div className="container">
@@ -83,10 +79,10 @@ class ProfileSantri extends Component {
                               <div className="row">
                                  <div className="col-4">
                                     <h3 className="text-white">
-                                       A. Khaidir Muktamar
+                                       Ustadz Ahlal
                                     </h3>
                                     <p className="text-secondary">
-                                       Santri
+                                       Musyrif
                                     </p>
                                  </div>
                                  <div className="col-8">
@@ -104,4 +100,4 @@ class ProfileSantri extends Component {
    }
 }
 
-export default ProfileSantri;
+export default ProfileMusyrif;

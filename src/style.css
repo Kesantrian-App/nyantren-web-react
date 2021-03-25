@@ -757,7 +757,7 @@ h3 {
 }
 
 #profile {
-   width: 11%;
+   width: 21%;
    white-space: nowrap;
    display: grid;
    overflow: hidden;
@@ -1252,6 +1252,20 @@ h1 {
    border-top-left-radius: 0;
    border-bottom-left-radius: 5%;
    border-bottom-right-radius: 5%;
+}
+
+.rounded-bottom-right {
+   border-top-right-radius: 0;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 5%;
+}
+
+.rounded-bottom-left {
+   border-top-right-radius: 0;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 5%;
+   border-bottom-right-radius: 0;
 }
 
 /* 

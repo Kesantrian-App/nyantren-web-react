@@ -12,13 +12,8 @@ import { Link } from "react-router-dom";
 import Izin from '../Izin'
 import Gadget_2 from '../Add Data/Addgadget'
 import Setoran_2 from '../Add Data/AddHafalan'
-import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
-import Setoran from "./../../undrawSetoran1.svg"
-import DaftarSantri from "./../../undrawDaftarSantri2.svg"
-import Gadget from "./../../undrawGadget2.svg"
-import Welcome from "./../../undrawWelcome.svg"
-import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
-import List from './../../fp_List.jpg'
+import Welcome from "./../../Undraw/undrawWalking.png"
+import List from './../../fp_List.png'
 import Loan from './../../fp_Loan.jpg'
 
 class Home_1 extends Component {
@@ -31,7 +26,7 @@ class Home_1 extends Component {
    render(){
       var loan = "asldnalsd";
       $(window).scroll(function () {
-         if ($(document).scrollTop() > 150 && $(document).scrollTop() < 980) {
+         if ($(document).scrollTop() > 150 && $(document).scrollTop() < 1200) {
             $('.sidecol').addClass('position-fixed')
             $('.sidecol').addClass('d-flex')
             $('.sidecol').addClass('mt-min-11')
@@ -40,7 +35,7 @@ class Home_1 extends Component {
             $('.sidebox').addClass('h-35')
             $('.sidebox').addClass('overflow-y-auto')
             $('.sidecol').removeClass('align-items-end')
-         } else if ($(document).scrollTop() > 980) {
+         } else if ($(document).scrollTop() > 1200) {
             $('.sidecol').addClass('align-items-end')
             $('.sidebox').removeClass('w-90')
             $('.sidecol').removeClass('position-fixed')
@@ -185,11 +180,11 @@ class Home_1 extends Component {
                               </div>
                               <div className="card-footer bg-lgreen-gradient-start border-0 p-0 m-0">
                                  <div className="btn-group w-100">
-                                    <Link to="/history" className="links links-light btn btn-secondary-2 rounded-bottom px-2 py-3 text-center w-100 h-100">
+                                    <Link to="/history" className="links links-light btn btn-secondary-2 rounded-bottom-left px-2 py-3 text-center w-100 h-100">
                                        <small>Lihat Riwayat</small>
                                        <span className="ms-2 d-flex align-items-center"></span>
                                     </Link>
-                                    <button className="links links-light btn btn-secondary-2 rounded-bottom px-0 py-3 text-center w-100 h-100" onClick={Setoran_F}>
+                                    <button className="links links-light btn btn-secondary-2 rounded-bottom-right px-0 py-3 text-center w-100 h-100" onClick={Setoran_F}>
                                        <small>Tambah Hafalan Baru</small>
                                        <span className="ms-2 d-flex align-items-center"></span>
                                     </button>
@@ -345,7 +340,7 @@ class Home_1 extends Component {
                                  <h5 className="text-success">
                                     Musyrif
                                  </h5>
-                                 <Link to="/profile" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
+                                 <Link to="/profilemusyrif" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
                                     Lihat Profil
                                  </Link>
                               </div>
@@ -370,28 +365,6 @@ class Home_1 extends Component {
                                           <div className="col-9">
                                              <h6 className="">Perizinan Gadget</h6>
                                              <small className="text-capitalize">Memberikan izin kepada santri yang meminjam laptop diluar waktu kbm</small>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="links pointer link-secondary list-fitur pe-2" onClick={Santri_}>
-                                       <div className="row">
-                                          <div className="col-3 d-flex align-items-center justify-content-center">
-                                             <FontAwesomeIcon icon={faVrCardboard} />
-                                          </div>
-                                          <div className="col-9">
-                                             <h6 className="">Santri Yang Dihandle</h6>
-                                             <small className="text-capitalize">Mengontrol Hafalan dan Kehidupan Santri</small>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="links pointer link-secondary list-fitur pe-2" onClick={Santri_}>
-                                       <div className="row">
-                                          <div className="col-3 d-flex align-items-center justify-content-center">
-                                             <FontAwesomeIcon icon={faVrCardboard} />
-                                          </div>
-                                          <div className="col-9">
-                                             <h6 className="">Santri Yang Dihandle</h6>
-                                             <small className="text-capitalize">Mengontrol Hafalan dan Kehidupan Santri</small>
                                           </div>
                                        </div>
                                     </div>
@@ -448,6 +421,7 @@ class Home_1 extends Component {
                <div className="row justify-content-center">
                   <div className="col-8 py-2 text-center border-top">
                      <small className="text-white">Copyright &copy; Nyantren 2021</small>
+                     {/* <a target="_blank" href="https://icons8.com/icons/set/multiple-devices">Multiple Devices icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
                   </div>
                </div>
             </div>

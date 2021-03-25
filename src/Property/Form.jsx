@@ -23,3 +23,12 @@ export const Button = ({ label, ...rest }) => {
     </div>
   );
 };
+
+// export const Form = ({ formContent, ...rest }) => {
+//   console.log(...rest)
+//   return (
+//     <form {...rest}>
+//       {formContent}
+//     </form>
+//   );
+// };

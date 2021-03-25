@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
       setAuth(true);
     }
   }, [auth]);
-  return <Route {...rest}>{auth ? children : <Redirect to="/select" />}</Route>;
+  return <Route {...rest}>{auth ? children : <Redirect to="/login" />}</Route>;
 };
 
 export default ProtectedRoute;

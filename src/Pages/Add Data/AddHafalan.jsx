@@ -9,14 +9,14 @@ import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
-import Setoran from "./../../undrawSetoran1.svg"
-import DaftarSantri from "./../../undrawDaftarSantri2.svg"
-import Gadget from "./../../undrawGadget2.svg"
-import Welcome from "./../../undrawWelcome.svg"
-import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
-import List from './../../fp_List.jpg'
-import Loan from './../../fp_Loan.jpg'
+// import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
+// import Setoran from "./../../undrawSetoran1.svg"
+// import DaftarSantri from "./../../undrawDaftarSantri2.svg"
+import Gadget from "./../../Undraw/undrawGadget2.svg"
+// import Welcome from "./../../undrawWelcome.svg"
+// import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
+// import List from './../../fp_List.jpg'
+// import Loan from './../../fp_Loan.jpg'
 
 class AddHafalan extends Component {
   render(){

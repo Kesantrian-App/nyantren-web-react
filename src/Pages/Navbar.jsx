@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Background from '../bg1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faCross, faTimes } from '@fortawesome/free-solid-svg-icons'
 import NyantrenLogo from './../nyantrenLogo.svg'
 import Profile from './Account/Profile'
 import $ from 'jquery'
+import axios from "axios";
 // import Style from './../js/style'
 // Font.register(src1, { fontFamily: 'Montserrat SemiBold' }); 
 const Navbar = ({children}) => {
+
+   const history = useHistory();
+
    const OpenNav = () => {
       var nav = document.getElementById("mySideNav")
       var navbar = document.getElementById("navbar")
@@ -62,6 +66,10 @@ const Navbar = ({children}) => {
        setAuth(true);
      }
    }, []);
+   const handleLogout = () => {
+      localStorage.clear();
+      window.location.href = "/";
+   }
    const ProfileOnHover = () => {
       $(this).addClass('.bg-lgreen-gradient-start');
       // $(this).fadeIn(500, function () {
@@ -75,7 +83,9 @@ const Navbar = ({children}) => {
       $(<Profile />).slideUp()
    }
    const ProfileAuthCondition = () => {
-      if (auth === true) {
+      let url = 'https://api-nyantren.herokuapp.com/api'
+      let nama = localStorage.getItem('nama')
+      if (auth === false) {
          return(
             <ul className="navbar-nav" style={{fontSize: "12px"}}>
                <li className="nav-item">
@@ -89,25 +99,6 @@ const Navbar = ({children}) => {
          return(
             <ul className="navbar-nav d-flex align-items-center justify-content-end" style={{fontSize: "12px"}}>
                <li className="nav-item p-2 mx-1">
-                  <div className="btn-group">
-                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen rounded-start py-2 px-3" to="/dashboard">
-                        <small>
-                        Musyrif
-                        </small>
-                     </Link>
-                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen py-2 px-3" to="/dashboardsantri">
-                        <small>
-                        Santri
-                        </small>
-                     </Link>
-                     <Link className="links links-lgreen p-0 btn btn-outline-lgreen rounded-end py-2 px-3" to="/dashboardguru">
-                        <small>
-                        Guru
-                        </small>
-                     </Link>
-                  </div>
-               </li>
-               <li className="nav-item p-2 mx-1">
                   <button className="of-0 position-relative" data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification">
                      <FontAwesomeIcon icon={faBell} className="text-20 text-light-1 icon" />
                      <span className="position-absolute top-0 translate-middle badge rounded-circle bg-danger">2</span>
@@ -119,8 +110,13 @@ const Navbar = ({children}) => {
                         <img src={Background} className="rounded-circle border-0 p-0" id="pp" alt=""/>
                      </span>
                      <span className="mx-s-1 text-light">
-                        A. Khaidir Muktamar
+                        {nama}
                      </span>
+                  </Link>
+               </li>
+               <li className="nav-item">
+                  <Link className="nav-link" onClick={handleLogout}>
+                     logout
                   </Link>
                </li>
             </ul>

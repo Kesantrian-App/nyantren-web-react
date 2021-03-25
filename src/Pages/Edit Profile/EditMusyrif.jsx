@@ -9,9 +9,10 @@ import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
+import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
 import DaftarSantri from "./../../Undraw/undrawDaftarSantri2.svg"
 
-class EditSantri extends Component {
+class EditMusyrif extends Component {
   render(){
     return(
       <React.Fragment>
@@ -35,27 +36,15 @@ class EditSantri extends Component {
                         </div>
                       </div>
                       <div className="col-6 py-0 h-80">
-                        <div className="card text-start bg-light-1 border-0 h-90">
+                        <div className="card text-start h-90">
                           <div className="card-body px-4 overflow-y-auto">
                             <div className="my-3">
                               <label htmlFor="name" className="text-10">Nama</label>
-                              <input type="text" className="form-control text-12" name="name" id="name" value="A. khaidir Muktamar" />
-                              <div className="my-1">
-                                <small className="alert alert-danger py-1">Bermasalah</small>
-                                {/* <input type="checkbox" name="bermasalah" id="bermasalah"/><label htmlFor="bermasalah" className="mx-2 text-10">Bermasalah</label> */}
-                              </div>
+                              <input type="text" className="form-control text-12" name="name" id="name" value="Ustadz Ahlal" />
                             </div>
                             <div className="my-3">
-                              <label htmlFor="kelas" className="text-10">Kelas</label>
-                              <input type="text" className="form-control text-12" name="kelas" id="kelas" value="XII" />
-                            </div>
-                            <div className="my-3">
-                              <label htmlFor="kelas" className="text-10">Jurusan</label>
-                              <input type="text" className="form-control text-12" name="kelas" id="kelas" value="Rekayasa Perangkat Lunak" readOnly />
-                            </div>
-                            <div className="my-3">
-                              <label htmlFor="kelas" className="text-10">Halaqoh</label>
-                              <input type="text" className="form-control text-12" name="kelas" id="kelas" value="Ustad Dzulkifli" readOnly />
+                              <label htmlFor="pendidikan" className="text-10">Pendidikan</label>
+                              <input type="text" className="form-control text-12" name="pendidikan" id="pendidikan" value="S1, Sarjana Hukum" readOnly />
                             </div>
                           </div>
                           <div className="card-footer justify-content-end d-flex p-0 border-0">
@@ -74,4 +63,4 @@ class EditSantri extends Component {
   }
 }
 
-export default EditSantri;
+export default EditMusyrif;

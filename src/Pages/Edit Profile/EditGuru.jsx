@@ -11,15 +11,14 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 // import Wavy from "./../../Wavy_Bus-30_Single-transparent-bg.png"
 // import Setoran from "./../../undrawSetoran1.svg"
-// import DaftarSantri from "./../../undrawDaftarSantri2.svg"
+import DaftarSantri from "./../../Undraw/undrawDaftarSantri2.svg"
 // import Gadget from "./../../undrawGadget2.svg"
-import LoanGadget from "./../../Undraw/undrawLoan.svg"
 // import Welcome from "./../../undrawWelcome.svg"
 // import LaporanHafalan from "./../../undrawLaporanHafalan.svg"
 // import List from './../../fp_List.jpg'
 // import Loan from './../../fp_Loan.jpg'
 
-class Addgadgetsantri extends Component {
+class EditGuru extends Component {
   render(){
     return(
       <React.Fragment>
@@ -32,50 +31,34 @@ class Addgadgetsantri extends Component {
                 <div className="card-body h-100 p-4">
                   <div className="container-fluid h-100">
                     <div className="row w-100 my-4 text-center">
-                      <h2 className="text-light-1 fw-bold">Izin Memegang Laptop</h2>
+                      <h2 className="text-light-1 fw-bold">Edit Profile</h2>
                       <small></small>
                     </div>
                     <div className="row h-100 w-100 m-0">
                       <div className="col-6 h-70 d-flex align-items-center">
                         <div className="row">
-                          <img src={LoanGadget} className="img-thumbnail w-80 border-0" alt="Gadget"/>
+                          <img src={DaftarSantri} className="img-thumbnail w-100 border-0" alt="Gadget"/>
                           <small>Ket : klik bagian luar untuk menutup tab</small>
                         </div>
                       </div>
                       <div className="col-6 py-0 h-80">
-                        <div className="card text-start bg-light-1 border-0 h-90">
+                        <div className="card text-start h-90">
                           <div className="card-body px-4 overflow-y-auto">
                             <div className="my-3">
-                              <label htmlFor="name" className="text-10 border-bottom w-50">Nama Santri</label>
-                              {/* <input type="text" className="form-control" name="name" id="name"/> */}
-                              <p>A. Khaidir Muktamar</p>
-                              <div className="my-1">
-                                {/* <input type="checkbox" name="bermasalah" id="bermasalah"/><label htmlFor="bermasalah" className="mx-2 text-10">Bermasalah</label> */}
-                              </div>
+                              <label htmlFor="name" className="text-10">Nama</label>
+                              <input type="text" className="form-control text-12" name="name" id="name" value="Kukuh Imamuddin" />
                             </div>
                             <div className="my-3">
-                              <label htmlFor="kelas" className="text-10 border-bottom w-15">Kelas</label>
-                              <p>XII RPL</p>
-                              {/* <input type="text" className="form-control" name="kelas" id="kelas"/> */}
+                              <label htmlFor="pendidikan" className="text-10">Pendidikan</label>
+                              <input type="text" className="form-control text-12" name="pendidikan" id="pendidikan" value="S1, Sarjana Hukum" readOnly />
                             </div>
                             <div className="my-3">
-                              <label htmlFor="waktu" className="text-10">Waktu</label>
-                              <div className="input-group">
-                                <input type="time" className="form-control" name="waktu" id="waktu"/>
-                                <input type="time" className="form-control" name="waktu" id="waktu"/>
-                              </div>
-                            </div>
-                            <div className="my-3">
-                              <label htmlFor="kelas" className="text-10">Durasi</label>
-                              <input type="text" className="form-control default" readOnly />
-                            </div>
-                            <div className="my-3">
-                              <label htmlFor="desc" className="text-10">Alasan</label>
-                              <textarea name="desc" className="form-control" id="desc" cols="30" rows="8"></textarea>
+                              <label htmlFor="mapel" className="text-10">Mata Pelajaran</label>
+                              <input type="text" className="form-control text-12" name="mapel" id="mapel" value="Matematika" readOnly />
                             </div>
                           </div>
                           <div className="card-footer justify-content-end d-flex p-0 border-0">
-                            <button className="btn btn-secondary-2 w-100 rounded-bottom" id="nambah">Tambah</button>
+                            <button className="btn btn-secondary-2 w-100 rounded-bottom">Simpan</button>
                           </div>
                         </div>
                       </div>
@@ -90,4 +73,4 @@ class Addgadgetsantri extends Component {
   }
 }
 
-export default Addgadgetsantri;
+export default EditGuru;

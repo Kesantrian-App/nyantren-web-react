@@ -14,7 +14,7 @@
     "@testing-library/user-event": "^12.6.0",
     "animate.css": "^4.1.1",
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "jquery": "^3.5.1",
     "lord-icon-element": "^2.0.2",

@@ -340,7 +340,7 @@ class Home_1 extends Component {
                                  <h5 className="text-success">
                                     Musyrif
                                  </h5>
-                                 <Link to="/profilemusyrif" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
+                                 <Link to="/profile" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
                                     Lihat Profil
                                  </Link>
                               </div>

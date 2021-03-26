@@ -96,9 +96,13 @@ const Login = ({ setToken }, props) => {
                 </ol>
                 <div class="carousel-inner h-100 align-items-end d-flex">
                   <div class="carousel-item active">
-                    <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Setoran Hafalan</h5>
+                      <h5 className="text-center">Setoran Hafalan</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -108,9 +112,13 @@ const Login = ({ setToken }, props) => {
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Hutang Hafalan</h5>
+                      <h5 className="text-center">Hutang Hafalan</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -120,9 +128,13 @@ const Login = ({ setToken }, props) => {
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src={DevIcons} className="w-20" alt="devices" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <img src={DevIcons} className="w-20" alt="devices" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Perizinan Gadget</h5>
+                      <h5 className="text-center">Perizinan Gadget</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -132,9 +144,13 @@ const Login = ({ setToken }, props) => {
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Pelanggaran dan Poin Siswa</h5>
+                      <h5 className="text-center">Pelanggaran dan Poin Siswa</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -144,9 +160,13 @@ const Login = ({ setToken }, props) => {
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Laundry</h5>
+                      <h5 className="text-center">Laundry</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -156,9 +176,13 @@ const Login = ({ setToken }, props) => {
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                    <div className="row">
+                      <div className="col-12 justify-content-center d-flex">
+                        <FontAwesomeIcon icon={faKey} className="text-lgreen fan" />
+                      </div>
+                    </div>
                     <div class="mt-10">
-                      <h5>Laporan Siswa</h5>
+                      <h5 className="text-center">Laporan Siswa</h5>
                       <div className="text-center">
                         <p>
                           Nulla vitae elit libero, a pharetra augue mollis
@@ -205,7 +229,7 @@ const Login = ({ setToken }, props) => {
                   />
                 </a>
               </div>
-              <div className="row align-content-center h-100">
+              <div className="row align-content-center h-100 px-4">
                 <div className="col-6 text-start">
                   <h1 className="text-light fw-bold">Nyantren</h1>
                   <h4 className="text-light">Aplikasi Karya Santri</h4>
@@ -214,7 +238,7 @@ const Login = ({ setToken }, props) => {
                 <div className="mt-2"></div>
                 <div className="card bg-lgreen border-0">
                   <form action="#" onSubmit={handleSubmit}>
-                    <div className="card-body">
+                    <div className="card-body justify-content-center">
                       <div className="input-group-3 border-light border bg-light mrr-2 my-4 rounded">
                         <span className="prr-3 bg-light me-1">
                           <FontAwesomeIcon
@@ -250,23 +274,21 @@ const Login = ({ setToken }, props) => {
                           value={password}
                         />
                       </div>
-                    </div>
+                      
                     {load === false ? (
                       <Input
                         type="submit"
                         className="btn btn-success mb-2 rounded align-self-center d-flex justify-content-center w-50"
                         value="Masuk"
                       />
-                    ) : (
-                      <Button className="btn btn-light">
-                        <lord-icon trigger="loop" src="/animatedIcons/loader.json"></lord-icon>
+                      ) : (
+                      <Button className="btn btn-success mb-2 rounded align-self-center d-flex justify-content-center w-50">
+                        Masuk <lord-icon trigger="loop" src="/animatedIcons/loader.json"></lord-icon>
                       </Button>
                     )}
+                    </div>
                   </form>
                   {/* <Button className="btn btn-success mb-2 rounded" label={"Masuk"} style={{width: "50%"}} /> */}
-                  {/* <p className="fw-light text-light">
-                        Belum punya akun? Daftar <Link to="/register" className="links text-success">disini</Link>
-                      </p> */}
                 </div>
               </div>
             </MuiThemeProvider>

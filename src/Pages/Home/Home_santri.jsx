@@ -270,7 +270,7 @@ class Home_santri extends Component {
                                  <h5 className="text-success">
                                     Santri
                                  </h5>
-                                 <Link to="/profilesantri" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
+                                 <Link to="/profile" className="links text-btn-white mt-3 p-2 btn btn-lgreen d-flex align-self-center justify-content-center">
                                     Lihat Profil
                                  </Link>
                               </div>

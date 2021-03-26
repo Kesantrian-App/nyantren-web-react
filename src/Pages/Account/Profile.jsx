@@ -8,9 +8,16 @@ import Forever from './../../forever_.png'
 // import Mq from './../bukitMq.jpg'
 import $ from 'jquery'
 import EditSantri from "../Edit Profile/EditSantri";
+import EditGuru from "../Edit Profile/EditGuru";
+import EditMusyrif from "../Edit Profile/EditMusyrif";
 
 class Profile extends Component {
    render(){
+      const user = localStorage.getItem('token');
+      const js = JSON.parse(user);
+      const role = js.success.role[0];
+      localStorage.setItem('rolens', role);
+      let nama = js.success.name;
       const EditDisplay = () => {
          var ep = document.getElementById('editProfile');
          if (ep.style.display == 'flex') {
@@ -26,13 +33,14 @@ class Profile extends Component {
       window.onclick = function(event) {
          var ep = document.getElementById('edit-santri');
          if (event.target == ep) {
-            ep.style.display = "none";
+            $('#edit-santri').addClass('d-none')
+            $('#edit-santri').removeClass('d-flex')
          }
       }
       return(
          <React.Fragment>
          <div className="container-fluid h-100 w-100 position-fixed justify-content-center top-0 bg-light-2 d-none edit-santri" id="edit-santri" style={{zIndex: '10'}}>
-            <EditSantri />
+            {(role === "santri") ? <EditSantri /> : role === "guru" ? <EditGuru /> : <EditMusyrif />}
          </div>
                <div className="p-4 h-100 w-100 position-fixed align-items-center" id="editProfile">
                   <div className="container">
@@ -60,9 +68,6 @@ class Profile extends Component {
                            <li className="nav-item mx-3">
                               <Link to="/" className="links text-white link-opacity-6 text-10">Home</Link>
                            </li>
-                           <li className="nav-item mx-3">
-                              <Link to="/dashboard" className="links text-white link-opacity-6 text-10">Dashboard</Link>
-                           </li>
                         </ul>
                      </div>
                   </div>
@@ -78,10 +83,10 @@ class Profile extends Component {
                               <div className="row">
                                  <div className="col-4">
                                     <h3 className="text-white">
-                                       A. Khaidir Muktamar
+                                       {nama}
                                     </h3>
                                     <p className="text-secondary">
-                                       Musyrif
+                                       {role}
                                     </p>
                                  </div>
                                  <div className="col-8">

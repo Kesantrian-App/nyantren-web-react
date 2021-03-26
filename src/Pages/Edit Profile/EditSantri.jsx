@@ -13,6 +13,11 @@ import DaftarSantri from "./../../Undraw/undrawDaftarSantri2.svg"
 
 class EditSantri extends Component {
   render(){
+    const user = localStorage.getItem('token');
+    const js = JSON.parse(user);
+    const role = js.success.role[0];
+    localStorage.setItem('rolens', role);
+    let nama = js.success.name;
     return(
       <React.Fragment>
           <div className="row h-100 w-80">
@@ -39,7 +44,7 @@ class EditSantri extends Component {
                           <div className="card-body px-4 overflow-y-auto">
                             <div className="my-3">
                               <label htmlFor="name" className="text-10">Nama</label>
-                              <input type="text" className="form-control text-12" name="name" id="name" value="A. khaidir Muktamar" />
+                              <input type="text" className="form-control text-12" name="name" id="name" value={nama} />
                               <div className="my-1">
                                 <small className="alert alert-danger py-1">Bermasalah</small>
                                 {/* <input type="checkbox" name="bermasalah" id="bermasalah"/><label htmlFor="bermasalah" className="mx-2 text-10">Bermasalah</label> */}

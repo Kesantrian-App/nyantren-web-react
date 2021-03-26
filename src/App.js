@@ -31,9 +31,22 @@ import useToken from './Auth/useToken';
 
 function App() {
   const { token, setToken } = useToken();
+  // const { role, setRole } = useRole();
 
   if(!token) {
     return <Login setToken={setToken} />
+  }
+
+  const user = localStorage.getItem('token');
+  const js = JSON.parse(user);
+  const role = js.success.role[0];
+  localStorage.setItem('rolens', role);
+  console.log(role);
+
+  const roles = localStorage.getItem('rolens');
+
+  const Roled = () => {
+    console.log(role);
   }
   
   return (
@@ -42,11 +55,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Navbar>
-              <Home_1 />
+              {(role === "santri") ? <Santri_1 /> : role === "guru" ? <Guru /> : <Home_1 />}
+              {Roled}
+              {/* {() => {}} */}
             </Navbar>
           </Route>
-          {/* <Route exact path="/"> */}
-          <Route exact path="/dashboardsantri">
+          {/* <Route exact path="/dashboardsantri">
             <Navbar>
               <Santri_1 />
             </Navbar>
@@ -55,7 +69,7 @@ function App() {
             <Navbar>
               <Guru />
             </Navbar>
-          </Route>
+          </Route> */}
           <Route exact path="/about">
             <Navbar>
               <About />

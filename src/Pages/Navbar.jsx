@@ -84,7 +84,11 @@ const Navbar = ({children}) => {
    }
    const ProfileAuthCondition = () => {
       let url = 'https://api-nyantren.herokuapp.com/api'
-      let nama = localStorage.getItem('nama')
+      const user = localStorage.getItem('token');
+      const js = JSON.parse(user);
+      const role = js.success.role[0];
+      localStorage.setItem('rolens', role);
+      let nama = js.success.name;
       if (auth === false) {
          return(
             <ul className="navbar-nav" style={{fontSize: "12px"}}>
@@ -105,7 +109,7 @@ const Navbar = ({children}) => {
                   </button>
                </li>
                <li className="nav-item bg-lgreen-gradient-start rounded-pill" id="profile" onMouseEnter={ProfileOnHover} onMouseLeave={ProfileOutHover}>
-                  <Link to="/profile" className="nav-link">
+                  <Link to="/profile" className="nav-link p-1">
                      <span className="m-0 p-0">
                         <img src={Background} className="rounded-circle border-0 p-0" id="pp" alt=""/>
                      </span>
@@ -114,7 +118,7 @@ const Navbar = ({children}) => {
                      </span>
                   </Link>
                </li>
-               <li className="nav-item">
+               <li className="nav-item mx-2">
                   <Link className="nav-link" onClick={handleLogout}>
                      logout
                   </Link>

@@ -113,7 +113,7 @@ const Navbar = ({children}) => {
                      <span className="m-0 p-0">
                         <img src={Background} className="rounded-circle border-0 p-0" id="pp" alt=""/>
                      </span>
-                     <span className="mx-s-1 text-light">
+                     <span className="mx-s-1 text-light text-capitalize">
                         {nama}
                      </span>
                   </Link>

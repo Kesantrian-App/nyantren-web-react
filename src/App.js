@@ -40,7 +40,13 @@ function App() {
   const user = localStorage.getItem('token');
   const js = JSON.parse(user);
   const role = js.success.role[0];
+  const name = js.success.name;
+  const emails = js.success.email;
+  const tokens = js.success.token;
   localStorage.setItem('rolens', role);
+  localStorage.setItem('name', name);
+  localStorage.setItem('emails', emails);
+  localStorage.setItem('tokens', tokens);
   console.log(role);
 
   const roles = localStorage.getItem('rolens');

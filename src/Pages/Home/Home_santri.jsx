@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
+import axios from 'axios'
 // import logo from "./../Nyantren.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import swal from 'sweetalert';
@@ -12,20 +13,40 @@ import { Link } from "react-router-dom";
 import Izin from './../Izin'
 import Gadget_2 from './../Add Data/Addgadgetsantri'
 import Setoran_2 from './../Add Data/AddHafalan'
-import Welcome from "./../../Undraw/undrawWalking.svg"
+import Setoran_Santri from './../Add Data/AddHafalanSantri'
+import Welcome from "./../../Undraw/undrawWalking.png"
 import None from "./../../Undraw/undrawNone.svg"
 import Nodata2 from "./../../Undraw/undrawNodata2.svg"
 import List from './../../fp_List.jpg'
 import Loan from './../../fp_Loan.jpg'
 
-class Home_santri extends Component {
-   componentDidMount() {
-      $(document).scrollTop(0)
-   }
-   componentDidUpdate() {
-      $(document).scrollTop(0)
-   }
-   render(){
+const Home_santri = () => {
+      let nama = localStorage.getItem('name');
+      let email = localStorage.getItem('emails');
+      let tokens = localStorage.getItem('tokens')
+
+      const headers = {
+         headers: {
+           Authorization: `Bearer ${tokens}`
+         }
+      }
+
+      useEffect(() => {
+         getUser()
+      }, [])
+      
+      const getUser = async () => {
+         const url = 'http://api-nyantren.herokuapp.com/api/show/santri/detail'
+         try {
+         let response = await axios.get(url, headers);
+         localStorage.setItem('id', response.data.success.id)
+         console.log(response.data.success);
+         } catch {
+         console.log("error");
+         }
+      };
+
+
       $(window).scroll(function () {
          if ($(document).scrollTop() > 150 && $(document).scrollTop() < 820) {
             $('.sidecol-santri').addClass('position-fixed')
@@ -111,7 +132,7 @@ class Home_santri extends Component {
                <Gadget_2 />
             </div>
             <div className="container-fluid h-100 w-100 position-fixed justify-content-center top-0 bg-light-2 d-none setoran-f" id="setoran-f" style={{zIndex: '10'}}>
-               <Setoran_2 />
+               <Setoran_Santri />
             </div>
             <div className="container-fluid pb-5 px-self-5">
                <div className="row justify-content-between text-center rowProfile-px py-4 mb-2 h-100">
@@ -122,7 +143,7 @@ class Home_santri extends Component {
                               <div className="row">
                                  <div className="cols-6 text-start text-light p-4 align-items-center d-flex">
                                     <div className="row h-100">
-                                       <h4>Selamat Datang, Khaidir!</h4>
+                                       <h4>Selamat Datang, {nama}!</h4>
                                        <p className="py-0">Semoga Diberkahi!</p>
                                     </div>
                                  </div>
@@ -345,7 +366,6 @@ class Home_santri extends Component {
             </div>
          </React.Fragment>
       );
-   }
 }
 
 export default Home_santri;

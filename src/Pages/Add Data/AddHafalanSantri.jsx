@@ -1,94 +1,57 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useState } from "react";
 import axios from 'axios'
-import Select from 'react-select';
+import logo from "./../../Nyantren.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import swal from 'sweetalert';
+import { Animated } from "react-animated-css";
+import $ from 'jquery'
+import { faBan, faChevronRight, faInfo, faPenSquare, faVrCardboard, faPlus, faPlusSquare, faPlusCircle} from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
+import { Button, Input } from './../../Property/Form'
 import Gadget from "./../../Undraw/undrawGadget2.svg"
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 defineLordIconElement(loadAnimation);
 
-const AddHafalan = () => {
+const AddHafalanSantri = () => {
   const loop_1 = 'loop'
-
-  let nama = localStorage.getItem('name');
-  let tokens = localStorage.getItem('tokens');
-  let id = localStorage.getItem('id');
-
-  const searchable = true
-  const clearable = true
-
-  const [names, setNames] = useState([])
-  const [idsantri, setIdsantri] = useState([])
-  const [list, setList] = useState([])
+  const db = 'http://api-nyantren.herokuapp.com/api'
+  
+  const [teks, setTeks] = useState()
+  const [erors, setErors] = useState()
 
   const [user2, setUser] = useState()
   const [surah, setSurah] = useState()
   const [ayatAwal, setAyatAwal] = useState()
   const [ayatAkhir, setAyatAkhir] = useState()
   const [rekaman, setRekaman] = useState()
-
-  const [teks, setTeks] = useState()
-  const [erors, setErors] = useState()
-  const [select, setSelect] = useState()
   
-  const [fTime, setfTime] = useState([]);
-  const [sTime, setsTime] = useState([]);
+  let nama = localStorage.getItem('name');
+  let tokens = localStorage.getItem('tokens');
+  let ids = localStorage.getItem('id');
   
-  const [santri, setSantri] = useState();
-  const [alasan, setAlasan] = useState();
-  const [waktu, setWaktu] = useState();
-  const [tanggal, setTanggal] = useState();
-  const [gadget, setGadget] = useState();
-  
+  const headers = {
+    headers: {
+      Authorization: `Bearer ${tokens}`
+    }
+  }
   const onSubmit = (e) => {
     e.preventDefault();
     Post();
-  }
-  
-  useEffect(() => {
-    getSantri()
-    console.log(list.name);
-  }, []);
+  };
 
-  const getSantri = async () => {
-    const urlSantri = `http://api-nyantren.herokuapp.com/api/show/kesantrian/santri`;
-    const headers = {
-      headers: {
-        Authorization: `Bearer ${tokens}`
-      }
-    }
-    //get data
-    // let response = await axios.get(urlSantri, headers)
-    const response = await axios.get(urlSantri, headers).then(data => data.data.success).catch(error => error)
-    setList(response);
-    setNames(response.name);
-    console.log(response);
-    // try {
-    //   let response = await axios.get(urlSantri, headers)
-    //   console.log(response.data.success.name);
-    //   // setNames(response.data.success.name);
-    //   // setIdsantri(response.data.success.id);
-    //   setList(response.data.success);
-    // } catch (err){
-    //   // console.log(err.response);
-    //   setTeks('Subhanallah, Gagal Ditambahkan!')
-    // }
-  }
-  
   const Post = async (e) => {
-    const url = `http://api-nyantren.herokuapp.com/api/post/kesantrian/setoranquran`;
+    const url = `http://api-nyantren.herokuapp.com/api/post/setoranquran`;
     const payload = {
-      guru_id: id,
+      user_id: ids,
       surah: surah,
       ayat_awal: ayatAwal,
       ayat_akhir: ayatAkhir,
       rekaman: rekaman
     };
-    const headers = {
-      headers: {
-        Authorization: `Bearer ${tokens}`
-      }
-    }
-    
     console.log(url);
     console.log(payload);
     try {
@@ -96,25 +59,13 @@ const AddHafalan = () => {
       setTeks('Alhamdulillah, Berhasil Ditambahkan!')
       console.log('Alhamdulillah, Berhasil Ditambahkan!')
       setErors('true')
-      // console.log(headers);
-      // console.log(response);
     } catch {
-      setTeks('Subhanallah, Gagal Ditambahkan!')
       setErors('false')
+      setTeks('Subhanallah, Gagal Ditambahkan!')
       console.log("Gagal Menambahkan Setoran");
     }
   };
-
-  const handleC = (e) => {
-    console.log(e);
-    setSelect(e.value)
-    console.log(select);
-  }
-
-  const options = list.map(function (data) {
-    return { value: data.id, label: data.name }
-  })
-    
+  
   return(
     <React.Fragment>
     <div className="row h-100 w-80">
@@ -139,24 +90,18 @@ const AddHafalan = () => {
                 <div className="col-6 py-0 h-80">
                   <form action="" className="h-100" onSubmit={onSubmit}>
                     <div className="card border-0 bg-light-1 text-start h-90">
-                      {erors === '' ? null : erors === 'true' ? <div className="position-absolute w-100 rounded-top alert alert-success text-10 my-0 rounded-0" style={{zIndex: "20"}}  >{teks}</div> : erors === 'false' ? <div className="position-absolute w-100 rounded-top alert alert-danger text-10 my-0 rounded-0" style={{zIndex: "20"}}  >{teks}</div> : ''}
+                      {erors === '' ? null : erors === 'true' ? <div className="position-absolute w-100 rounded-top alert alert-success text-10 my-0 rounded-0" zIndex="20"  >{teks}</div> : erors === 'false' ? <div className="position-absolute w-100 rounded-top alert alert-danger text-10 my-0 rounded-0" zIndex="20"  >{teks}</div> : ''}
                       <div className="card-body px-4 overflow-y-auto">
                         <div className="my-3">
-                          <label htmlFor="nama" className="text-10 border-bottom w-15">Name</label>
-                          <p className="text-capitalize">{nama}</p>
-                        </div>
-                        <div className="my-3">
                           <label htmlFor="name" className="text-10 border-bottom w-50">Nama Santri</label>
-                          <Select name="santri" id="santri"
-                          onChange={handleC}
-                          clearable={clearable}
-                          searchable={searchable}
-                          labelKey='name'
-                          valueKey='countryCode'
-                          options={options} />
+                          <p> {nama} </p>
                           <div className="my-1">
                             {/* <input type="checkbox" name="bermasalah" id="bermasalah"/><label htmlFor="bermasalah" className="mx-2 text-10">Bermasalah</label> */}
                           </div>
+                        </div>
+                        <div className="my-3">
+                          <label htmlFor="kelas" className="text-10 border-bottom w-15">Kelas</label>
+                          <p>XII RPL</p>
                         </div>
                         <div className="my-3">
                           <label htmlFor="surah" className="text-10">Surah</label>
@@ -220,4 +165,4 @@ const AddHafalan = () => {
   );
 }
 
-export default AddHafalan;
+export default AddHafalanSantri;
